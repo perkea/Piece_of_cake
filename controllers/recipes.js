@@ -1,9 +1,18 @@
 const express = require("express");
 const recipesRouter = express.Router();
-const Recipe = require("../models/");
-const User = require("../models/");
+const Recipe = require("../models/recipe");
+const RecipeSeed = require("../models/recipeSeed");
+const User = require("../models/user");
 
-
+////////////////////////Seed route////////////////////////////////////
+recipesRouter.get("/seed", (req, res) => {
+    Recipe.deleteMany({}, (error, allRecipes) => {
+  
+    })
+   Recipe.create(recipeSeed, (error, data) => {
+      res.redirect("/recipes");
+    });
+  });
 
 //////////////////////////Index//////////////////////////
 recipesRouter.get("/", (req, res) => {
@@ -16,9 +25,9 @@ recipesRouter.get("/", (req, res) => {
 
 ///////////////////////////////New/////////////////////////
 recipesRouter.get('/new', (req, res) => {
-   Recipe.find({}, (err, foundRecipes) => {
+   User.find({}, (err, foundUsers) => {
         res.render('recipes/new.ejs', {
-             recipes: foundRecipes
+             users: foundUsers
         });
     })
  });
@@ -27,8 +36,8 @@ recipesRouter.get('/new', (req, res) => {
 recipesRouter.post('/', (req, res) => {
     console.log(req.body)
     // This Article is now expecting an author property
-    Recipe.create(req.body, (err, createdRecipe) => {
-        res.redirect('/recipes');
+   Recipe.create(req.body, (err, createdRecipe) => {
+        res.redirect('recipes');
     });
 });
 
@@ -36,11 +45,11 @@ recipesRouter.post('/', (req, res) => {
 
 recipesRouter.get("/:id", (req, res) => {
            Recipe.findById(req.params.id, (error, foundRecipe) => {
-                res.render('articles/show.ejs', {
+                res.render('recipes/show.ejs', {
                     recipe: foundRecipe
                 });
             })
-            Recipe.findById(req.params.id).populate('author').exec((err, foundRecipe) => {
+            Recipe.findById(req.params.id).populate('user').exec((err, foundRecipe) => {
                 console.log(foundRecipe)
                 res.render('recipes/show.ejs', {
                     recipe: foundRecipe

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Express Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Show Page for <%= recipe.title %></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/recipes">User Index</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>User Attributes:</h2>
+            <ul>
+                <li>Name: <%= recipe.title %></li><li>Name: <%= recipe.title %></li>
+                <li>Preparation time: <%= recipe.preparation_time %></li>
+                <li>Cook Time: <%= recipe.cook_time %></li>
+                <li>Image: <%= recipe.image %></li>
+                <li>Ingredients: <%= recipe.ingredients %></li>
+                <li>Directions: <%= recipe.directions %></li>
+                <li>Body: <%= recipe.body %></li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

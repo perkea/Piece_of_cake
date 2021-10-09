@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 
 
-router.get("/users/delete", async (res, req) => {
+router.get("/delete", async (res, req) => {
     await User.deleteMany({});
     res.redirect("/");
 });
@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
 
         req.session.user = foundUser._id;
 
-        res.redirect('/dashboard')
+        res.redirect('dashboard.ejs')
     });
 });
 
@@ -63,7 +63,7 @@ console.log('password check', tempPassword, req.body.password, isMatched)
     User.create(req.body, (error, user) => {
         req.session.user = user._id
         console.log(user)
-        res.redirect('/dashboard');
+        res.redirect('dashboard.ejs');
     })
 
 });
@@ -76,7 +76,7 @@ router.get('/logout', (req, res) => {
 
 function isAuthenticated(req, res, next) {
     if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
+        return res.redirect('login');
     }
     next(); // user is authenticated, keep moving on to the next step
 }
