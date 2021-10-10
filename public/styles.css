@@ -1,8 +1,3 @@
-/* @import "materialize/components/color-variables"; */
-$primary-color: color("blue", "lighten-2") !default;
-$secondary-color: color("yellow", "base") !default;
-/* @import 'materialize'; */
-
 
 
 
@@ -17,6 +12,8 @@ $secondary-color: color("yellow", "base") !default;
   --main-color2:#3E1E07;
   --main-color3:#E8DCCA;
   --main-color4:#7B3F0C;
+  --main-font-color1:white;
+
 
     
   }
@@ -29,6 +26,7 @@ $secondary-color: color("yellow", "base") !default;
     background: pink;
     font-family: helvetica;
     background-color: var(--main-color3);
+    color:var(--main-font-color1);
    
    
   } 

@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>Express Blog</title>
+    <%- include('../partials/head.ejs') %>
 </head>
+   
 
 <body>
     <header>
-        <h1>Create an User</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/recipes">Recipes </a>
-                </li>
-            </ul>
-        </nav>
+        <%- include('../partials/header.ejs') %>
     </header>
+  
     <main>
         <form action="/recipes" method="POST">
             <input placeholder = "Title" type="text" name="title" /><br>

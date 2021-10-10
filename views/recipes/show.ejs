@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>Express Blog</title>
+    <%- include('../partials/head.ejs') %>
 </head>
+   
 
 <body>
     <header>
-        <h1>Show Page for <%= recipe.title %></h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/recipes">Recipes</a>
-                </li>
-            </ul>
-        </nav>
+        <%- include('../partials/header.ejs') %>
     </header>
+   
     <main>
         <section>
             <h2>Recipe Details</h2>
