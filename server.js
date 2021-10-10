@@ -38,7 +38,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexController);
 app.use('/', usersController);
 app.use("/recipes", recipesController);
-
+app.use(express.static('public'))
 
 
 

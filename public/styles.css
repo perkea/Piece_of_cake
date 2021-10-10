@@ -1,0 +1,86 @@
+/* @import "materialize/components/color-variables"; */
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+/* @import 'materialize'; */
+
+
+
+
+/* VARIABLES */
+:root {
+    /* --bright-orange: #F18963;
+    --light-orange: #f5ac91;
+    --bright-green: #A0BE73;
+    --light-green: #c6d8ab;
+    --purple: #B67D9A; */
+  --main-color1:#CA9C52;
+  --main-color2:#3E1E07;
+  --main-color3:#E8DCCA;
+  --main-color4:#7B3F0C;
+
+    
+  }
+  
+
+
+
+  /* GENERAL */
+   body {
+    background: pink;
+    font-family: helvetica;
+    background-color: var(--main-color3);
+   
+   
+  } 
+  
+  
+  /* CONTAINERS */
+  .container {
+    width: 80vw;
+    height: 70vw;
+    background-color: var(--main-color3);
+    margin: 50px auto;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #ddd,
+                -1px -1px 10px #ddd,
+                1px -1px 10px #ddd,
+                -1px 1px 10px #ddd;
+                
+  }
+  .sidebar {
+    width: 50%;
+    /* background-image: url("https://cdn.pixabay.com/photo/2018/06/22/14/44/creme-brulee-3490886__480.jpg"); */
+    background-image: url("https://cdn.pixabay.com/photo/2020/05/11/15/06/food-5158702__480.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+  }
+  .registration {
+    width: 50%;
+    background: var(--main-color1);
+    border-radius: 0 10px 10px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+    color:#CA9C52;
+  }
+  
+  
+  /* ETC. DECORATION */
+  h1 {
+    font-family: 'Oswald';
+    font-weight: 500;
+    color: var(--bright-orange);
+    border-bottom: 2px solid var(--bright-green);
+  }
+  
+  /* FORMS */
+  .account-info{
+     color:yellowgreen 
+  }
+  
+  label{
+    color:#A0BE73 ;
+    font-size: 12px; 
+  }
