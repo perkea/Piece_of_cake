@@ -31,16 +31,58 @@ recipesRouter.get('/new', (req, res) => {
         });
     })
  });
+ //////////////////////////// Delete////////////////////////////////////////////////////
+recipesRouter.delete("/:id", (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id, (err, data) => {
+      console.log("selected id", req.params.id);
+      console.log("this is the error", err);
+      console.log("this is the deleted item", data);
+      res.redirect("/recipes")
+    })
+  })
+
+ ///////////////////////////////// Update//////////////////////////////////////
+recipesRouter.put("/:id", (req, res) => {
+  if (req.body.completed === "on") {
+    req.body.completed = true
+  } else {
+    req.body.completed = false
+  }
+console.log('update req.body', req.params.id, req.body);
+  Recipe.findByIdAndUpdate(
+    req.params.id,
+    req.body, {
+      new: true, // returns the document after the update
+    },
+    (error, updatedRecipe) => {
+console.log('after update', updatedRecipe);
+      res.redirect(`/recipes/${req.params.id}`)
+    }
+  )
+})
 
 /////////////////////////////// Create/////////////////////////////
 recipesRouter.post('/', (req, res) => {
     console.log(req.body)
+    if (req.body.completed === "on") {
+        req.body.completed = true;
+      } else {
+        req.body.completed = false;
+      }
     // This Article is now expecting an author property
    Recipe.create(req.body, (err, createdRecipe) => {
-        res.redirect('recipes');
+        res.redirect('/recipes');
     });
 });
 
+//////////////////////////////////// Edit////////////////////////////////////////////////
+recipesRouter.get("/:id/edit", (req, res) => {
+    Recipe.findById(req.params.id, (error, foundRecipe) => {
+      res.render("recipes/edit.ejs", {
+       recipe: foundRecipe,
+      })
+    })
+  })
 ///////////////////////////////////Show/////////////////////////
 
 recipesRouter.get("/:id", (req, res) => {

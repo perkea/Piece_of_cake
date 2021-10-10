@@ -15,16 +15,16 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/recipes">User Index</a>
+                    <a href="/recipes">Recipes</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h2>User Attributes:</h2>
+            <h2>Recipe Details</h2>
             <ul>
-                <li>Name: <%= recipe.title %></li><li>Name: <%= recipe.title %></li>
+                <li>Name: <%= recipe.title %></li>
                 <li>Preparation time: <%= recipe.preparation_time %></li>
                 <li>Cook Time: <%= recipe.cook_time %></li>
                 <li>Image: <%= recipe.image %></li>
@@ -32,6 +32,12 @@
                 <li>Directions: <%= recipe.directions %></li>
                 <li>Body: <%= recipe.body %></li>
             </ul>
+            <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
+            </form>
+            <a href="/recipes/<%= recipe._id; %>/edit" class="editLink">Edit</a>
+            <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
+                <input class="waves-effect waves-light dltBtn" type="submit" value="DELETE" />
+            </form>
         </section>
     </main>
 </body>

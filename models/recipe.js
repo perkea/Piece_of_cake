@@ -8,7 +8,6 @@ const recipeSchema = new Schema({
     image: String,
     ingredients: String,
     directions: String,
-    body: String,
     user: {
         //this type property is set to an Mongoode Obgect
         type: Schema.Types.ObjectId,

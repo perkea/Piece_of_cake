@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Recipes</title>
+</head>
+
+<body>
+    <h1>Edit a Recipe</h1>
+    <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+        <!--  NOTE: the form is pre-populated with values for the server-->
+        Title:<input value="<%= recipe.title %>" type="text" name="title" /><br>
+        Preparation time: <input value="<%= recipe.preparation_time %>" type="number" name="preparation_time" /><br>
+        Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
+        Image: <input value="<%= recipe.image %>" type="text" name="image" /><br>
+        Ingredients:<input value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
+        Directions:<input value="<%= recipe.directions %>" type="text" name="directions" /><br>
+        <input type="submit" value="Submit Changes" />
+        <i class="material-icons right"></i>
+        <a href="/recipes">Back to Main Gallery</a>
+    </form>
+    <style>
+        body {
+            color: plum;
+            background-color: peachpuff;
+            margin-left: 30px;
+
+        }
+
+        .prod_img {
+            width: 200px;
+            height: 200px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        input {
+            margin-right: 50px;
+        }
+    </style>
+</body>
+
+</html>

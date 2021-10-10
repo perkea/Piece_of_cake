@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require("morgan");
+const methodOverride = require('method-override');
 const indexController= require("./controllers/index");
 const usersController = require('./controllers/users');
 const recipesController = require("./controllers/recipes");
@@ -32,6 +33,7 @@ app.use(expressSession({
     resave: false, // this option updates session storage after request
     saveUninitialized: false 
 }));
+app.use(methodOverride('_method'));
 ////////////////////////////////////////Routes//////////////////////////////
 app.use('/', indexController);
 app.use('/', usersController);
