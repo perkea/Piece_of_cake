@@ -28,7 +28,8 @@ recipesRouter.get("/", (req, res) => {
 recipesRouter.get('/new', (req, res) => {
    User.find({}, (err, foundUsers) => {
         res.render('recipes/new.ejs', {
-             users: foundUsers
+             users: foundUsers,
+             tabTitle: "Add a new Recipe",
         });
     })
  });
