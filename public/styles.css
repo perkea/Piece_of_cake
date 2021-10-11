@@ -144,31 +144,82 @@
     color:#CA9C52;
   }
 
-  .col s12{
-    text-align: center;  
-  }
+  
 
   .index_img{
     border:none;
-    margin: none;  
+    width:100%;
+    height: 570px;  
   }
   .recipe_title{
     color:var(--main-color2);
-    font-weight: 800;
- 
-    
+    font-weight: 800;  
   }
+ 
   .recipe_img{
     height:480px;
-    width:720px; 
-    margin-bottom: 100px; 
+    width:720px;  
   }
-
+.recipe_card{
+    background-color: var(--main-color1);
+}
   .nav-wrapper{
     background-color: var(--main-color4);
     height:200%;
+    margin-left: 200px;
   }
+  
   .left hide-on-med-and-down{
-   font:50px;   
+   font:50px; 
+  
   }
- 
+ /* (A) CONTAINERS + SHARED */
+#shop-list, #shop-add {
+    display: flex;
+    flex-wrap: wrap;
+    background: #f2f2f2;
+    border: 1px solid #eee;
+    padding: 10px;
+    max-width: 400px;
+  }
+  .item-row, .item-name, .item-del, .item-ok, #shop-item, #shop-add-btn {
+    box-sizing: border-box; 
+    border: 0;
+  }
+  .item-name, #shop-item {
+    background: #fff;
+    padding: 10px;
+  }
+  .item-del, .item-ok, #shop-add-btn {
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* (B) SHOPPING LIST */
+  .item-row {
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+  }
+  .item-name { width: 60%; }
+  .item-name.item-got { background: #f5fffa; }
+  .item-name.item-got:before {
+    content: "\02713";
+    margin-right: 5px;
+    font-weight: bold;
+    color: #00d036;
+  }
+  
+  .item-del, .item-ok { width: 20%; }
+  .item-del { background: #de1919; }
+  .item-ok { background: #5a75d6; }
+  
+  /* (C) ADD ITEM */
+  #shop-item { width: 75% }
+  #shop-add-btn {
+    width: 25%;
+    background: #5a75d6;
+  }
+  
+  /* [DOES NOT MATTER] */
+  html, body { font-family: arial, sans-serif }
