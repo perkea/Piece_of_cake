@@ -7,10 +7,11 @@
   
 
 <body>
-    <h1>Edit a Recipe</h1>
+    <h1><Edit a Recipe></h1>
     <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
         Title:<input value="<%= recipe.title %>" type="text" name="title" /><br>
+       Intro:<input value="<%= recipe.intro %>" type="text" name="intro" /><br>
         Preparation time: <input value="<%= recipe.preparation_time %>" type="number" name="preparation_time" /><br>
         Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
         Image: <input value="<%= recipe.image %>" type="text" name="image" /><br>

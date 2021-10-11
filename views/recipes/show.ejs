@@ -12,21 +12,74 @@
    
     <main>
         <section>
-            <h2>Recipe Details</h2>
-            <ul>
-                <li>Name: <%= recipe.title %></li>
-                <li>Preparation time: <%= recipe.preparation_time %></li>
-                <li>Cook Time: <%= recipe.cook_time %></li>
-                <li>Image: <%= recipe.image %></li>
-                <li>Ingredients: <%= recipe.ingredients %></li>
-                <li>Directions: <%= recipe.directions %></li>
-                <li>Body: <%= recipe.body %></li>
-            </ul>
+            <h2><%= recipe.title %></h2>
+            <div class="row">
+                <div class="col s1">
+                    </div>
+                <div class="col s10"> <div class="divider"></div>
+                <div class="section">
+                  <h5><img class = "recipe_img" src = "<%= recipe.image %>"/></h5>
+                </div>
+                <div class="col s1"></div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col s3">
+                    </div>
+                <div class="col s6"> <div class="divider"></div>
+                <div class="section">
+                 <p><%= recipe.intro %></p>
+                </div>
+                <div class="col s3"></div>
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col s6">
+                    <div class="section">
+                        <h5>Preparation time</h5>
+                        <p><%= recipe.preparation_time %> minutes</p>
+                        <div class="section">
+                            <h5>Cook Time</h5>
+                            <p><%= recipe.cook_time %> minutes</p>
+                          </div>
+                      
+                    </div>
+                <div class="col s3"> <div class="divider"></div>
+                
+                    
+                </div>
+                <div class="col s3">
+                    
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col s3">
+                    <div class="divider"></div>
+            <div class="section">
+              <h5>Ingredients</h5>
+              <p> <%= recipe.ingredients %></p>
+            </div>
+                    </div>
+                <div class="col s6"> <div class="divider"></div>
+                <div class="section">
+                    <div class="divider"></div>
+                    <div class="section">
+                      <h5>Directions</h5>
+                      <p><%= recipe.directions %></p>
+                    </div>
+                </div>
+                <div class="col s3"></div>
+              </div>
+            </div>
             <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
             </form>
-            <a href="/recipes/<%= recipe._id; %>/edit" class="editLink">Edit</a>
+            <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink">Edit</a>
             <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
-                <input class="waves-effect waves-light dltBtn" type="submit" value="DELETE" />
+                <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn" type="submit" value="DELETE" />
             </form>
         </section>
     </main>

@@ -26,7 +26,7 @@
     background: pink;
     font-family: helvetica;
     background-color: var(--main-color3);
-    color:var(--main-font-color1);
+   color:black;
    
    
   } 
@@ -97,5 +97,14 @@
     height: 250px;
     width:150px;
    
+ }
+ .list_of_recipes{
+     color:black
+ }
+.recipe_title{
+    text-align: center;
+}
+ .editLink{
+    background-color: chocolate;
  }
  
