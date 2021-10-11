@@ -23,7 +23,7 @@
 
   /* GENERAL */
    body {
-    background: pink;
+   
     font-family: helvetica;
     background-color: var(--main-color3);
    color:black;
@@ -128,7 +128,8 @@
     width: 50%;
     /* background-image: url("https://cdn.pixabay.com/photo/2018/06/22/14/44/creme-brulee-3490886__480.jpg"); */
     /* background-image: url("https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg"); */
-    background-image: url("https://cdn.pixabay.com/photo/2017/03/31/18/02/strawberry-dessert-2191973_1280.jpg");
+    /* background-image: url("https://cdn.pixabay.com/photo/2017/03/31/18/02/strawberry-dessert-2191973_1280.jpg"); */
+    background-image: url("https://cdn.pixabay.com/photo/2016/06/17/15/35/strawberries-1463444__480.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
@@ -142,3 +143,32 @@
     overflow: auto;
     color:#CA9C52;
   }
+
+  .col s12{
+    text-align: center;  
+  }
+
+  .index_img{
+    border:none;
+    margin: none;  
+  }
+  .recipe_title{
+    color:var(--main-color2);
+    font-weight: 800;
+ 
+    
+  }
+  .recipe_img{
+    height:480px;
+    width:720px; 
+    margin-bottom: 100px; 
+  }
+
+  .nav-wrapper{
+    background-color: var(--main-color4);
+    height:200%;
+  }
+  .left hide-on-med-and-down{
+   font:50px;   
+  }
+ 

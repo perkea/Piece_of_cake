@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <%- include ('../partials/head.ejs') %>
 
 </head>
- 
+
 
 <body>
     <header>
         <!-- <img class = 'logo' src = "https://cdn.pixabay.com/photo/2017/05/23/22/33/birthday-2338813_1280.jpg"/>
        <img class = "logo" src = "https://cdn.pixabay.com/photo/2017/09/14/14/33/cupcake-2749204__480.jpg"/> -->
-       <!-- <img class = "logo"  src = "https://cdn.pixabay.com/photo/2018/11/22/05/09/cupcake-3831122_1280.jpg"/> -->
-   
-       <div class="row">
-        <div class="col s3"><img class = "logo1"  src = "https://cdn.pixabay.com/photo/2018/11/22/05/09/cupcake-3831122_1280.jpg"/></div>
-        <div class="col s6">Piece Of Cake</div>
-        <div class="col s3"><img class = "logo1"  src = "https://cdn.pixabay.com/photo/2018/11/22/05/09/cupcake-3831122_1280.jpg"/></div>
-        
-        <nav>
+        <!-- <img class = "logo"  src = "https://cdn.pixabay.com/photo/2018/11/22/05/09/cupcake-3831122_1280.jpg"/> -->
+        <main>
+            <section>
+
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#" class="brand-logo center">Piece of Cake</a>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li><a href="/">Gallery</a></li>
+                            <li><a href="/recipes/new">Add a Recipe</a></li>
+                            <li><a href="collapsible.html">Shopping List</a></li>
+                            <li><a href="collapsible.html">Meal Planner</a></li>
+                            <li><a href="/login">Login Page</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <body>
+
+                    <!-- Page Content goes here -->
+                    <!-- <img src = "https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg"/>   -->
+                    <!-- <img src = "https://cdn.pixabay.com/photo/2017/12/05/16/43/egg-nog-2999740_1280.jpg"/> -->
+
+
+
+
+                    <div class="row">
+                        <div class="col s12"> </div>
+                        <div class="col s12"><img class="index_img"
+                                src="https://cdn.pixabay.com/photo/2019/01/28/10/02/ferrero-rocher-cake-3960005_1280.jpg" />
+                        </div>
+
+                    </div>
+
+
+
+            </section>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <nav>
             <ul>
                 <li>
                     <a href="/">Home</a>
@@ -25,24 +73,43 @@
                 <li>
                     <a href="/recipes/new">Add Recipe</a>
                 </li>
-                <!-- <li>
+                 <li>
                     <a href="/recipes/new">Shopping List</a>
                 </li>
                 <li>
                     <a href="/recipes/new">Meal Planner</a>
                 </li> -->
-            </ul>
-        </nav>
+        <!-- </ul>
+        </nav> -->
     </header>
     <main>
-        <h2 class = "list_of_recipes">List of Recipes</h2>
-        <ul>
-            <% for(let i = 0; i < recipes.length; i++){ %>
-            <li>
-                <a href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a>
-            </li>
-            <% } %>
-        </ul>
+
+        <div class="row">
+            <div class="col s12">
+                <h2 class="list_of_recipes">List of Recipes</h2>
+            </div>
+            <div class="col s6">
+                <ul>
+                    <% for(let i = 0; i < recipes.length; i++){ %>
+                    <li>
+                        <a class="recipe_title" href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a>
+                    <li><img class="recipe_img" src="<%= recipes[i].image %>" /></li>
+
+                    </li>
+                    
+                    <% } %>
+                    
+                </ul>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
     </main>
 </body>
 
