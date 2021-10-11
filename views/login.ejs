@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Welcome</title>
 </head>
-<body>
-     
-    <h1>Login in</h1>
-    <% if(error){%>
-        <p style = "color: red;"><%= error %></p>
 
-    <%}%>
-    <p>Please enter your credentials</p>
-    <form action="login" method="POST">
-        <label>
-            Username:
-            <input type="text" name="username" required>
-        </label><br>
-        <label>
-            Password:
-            <input type="password" name="password" required>
-        </label><br>
-        <input type="submit" value="Login">
-    </form>
+<body>
+    <h1>Welcome</h1>
+    <!-- ============= CONTAINER ============== -->
+    <div class="login_container">
+        <!-- sidebar -->
+        <div class="login_sidebar">
+
+        </div>
+        <!-- registration container -->
+        <div class="login_registration">
+            <h2>Login in</h2>
+            <% if(error){%>
+            <p style="color: red;"><%= error %></p>
+
+            <%}%>
+        <p>Please enter your credentials</p>
+        <form action="login" method="POST">
+            <fieldset class="account-info">
+            <label>
+                Username:
+                <input type="text" name="username" required>
+            </label><br>
+            <label>
+                Password:
+                <input type="password" name="password" required>
+            </label><br>
+           
+            </fieldset class = "account-info">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+ 
+   
 </body>
 </html>

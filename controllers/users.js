@@ -88,7 +88,7 @@ console.log('password check', tempPassword, req.body.password, isMatched)
     User.create(req.body, (error, user) => {
         req.session.user = user._id
         console.log(user)
-        res.redirect('/dashboard');
+        res.redirect('/login');
     })
 
 });

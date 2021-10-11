@@ -107,4 +107,38 @@
  .editLink{
     background-color: chocolate;
  }
- 
+
+ .dashboard_img{
+   background-image: url("https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg");  
+ }
+ .login_container {
+    width: 80vw;
+    height: 70vw;
+    background-color: var(--main-color3);
+    margin: 50px auto;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #ddd,
+                -1px -1px 10px #ddd,
+                1px -1px 10px #ddd,
+                -1px 1px 10px #ddd;
+                
+  }
+  .login_sidebar {
+    width: 50%;
+    /* background-image: url("https://cdn.pixabay.com/photo/2018/06/22/14/44/creme-brulee-3490886__480.jpg"); */
+    /* background-image: url("https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg"); */
+    background-image: url("https://cdn.pixabay.com/photo/2017/03/31/18/02/strawberry-dessert-2191973_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+  }
+  .login_registration {
+    width: 50%;
+    background: var(--main-color2);
+    border-radius: 0 10px 10px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+    color:#CA9C52;
+  }
