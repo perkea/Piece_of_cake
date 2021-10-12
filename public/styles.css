@@ -151,6 +151,12 @@
     width:100%;
     height: 570px;  
   }
+  .card .card-image img{
+border-radius: 50%;
+  }
+  .card .card-image {
+      background-color: var(--main-color2);
+  }
   .recipe_title{
     color:var(--main-color2);
     font-weight: 800;  
@@ -158,7 +164,8 @@
  
   .recipe_img{
     height:480px;
-    width:720px;  
+    width:720px;
+    border-radius: 50%; 
   }
   .recipe_intro{
     margin-top: 15px; 
