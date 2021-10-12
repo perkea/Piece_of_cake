@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Welcome</title>
+</head>
+
+<body>
+    <header>
+        <!-- <h1>Hello <%= user.username %></h1>
+        <nav>
+            <a href="/logout">Logout</a>
+        </nav> -->
+    </header>
+    <main>
+      
+      <div class="ingredient-container">
+        <h2>Ingredient List</h2>
+        <div class="ingredient">
+        <form action="" method="POST" class="ingredient-header">
+        <input type="text" name="content">
+        <button type="submit"><span class="fas fa-plus"></span></button>
+        </form>
+        <ul class="ingredient-list">
+        <% ingredients.forEach(details => { %>
+        <% if (details._id == idTask) { %>
+        <li class="ingredient-list-item">
+        <form action="/edit/<%= details._id %>" method="POST">
+        <input type="text" value="<%= details.content %>" name="content">
+        <button type="submit">Confirm</button>
+        <a href="/" class="cancel">Cancel</a>
+        </form>
+        </li>
+        <% } else { %>
+        <li class="ingredient-list-item">
+        <div class="ingredient-list-item-name"><%= details.content %></div>
+        <a href="/edit/<%= details._id %>" class="edit"> <span class="fas fa-edit"></span>
+        </a>
+        <a href="/remove/<%= details._id %>" class="remove"> <span class="fas fa-times"></span>
+        </a>
+        </li>
+        <% } %>
+        <% }) %>
+        </ul>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+

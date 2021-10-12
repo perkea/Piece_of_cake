@@ -7,19 +7,28 @@
 
 <body>
     <header>
-        <%- include('../partials/header.ejs') %>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">Piece of Cake</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/recipes">Gallery</a></li>
+              </ul>
+            </div>
+          </nav>
     </header>
   
-    <main>
-        <form action="/recipes" method="POST">
+    <main class = "recipe_main">
+         <form action="/recipes" method="POST" class = "new_recipe">
             <input placeholder = "Title" type="text" name="title" /><br>
             <input placeholder = "Intro" type="text" name="intro" /><br>
             <input placeholder = "preparation_time" type="number" name="preparation_time" /><br>
             <input placeholder = "cook_time" type="number" name="cook_time" /><br>
             <input placeholder = "image" type="text" name="image" /><br>
             <input placeholder = "ingredients" type="text" name="ingredients" /><br>
+            <input placeholder = "ingredients" type="text" name="ingredients" /><br>
             <input placeholder = "directions" type="text" name="directions" /><br>
-            <input type="submit" value="Create Recipe" />
+            <input placeholder = "directions" type="text" name="directions" /><br>
+            <input class= "create_recipe" type="submit" value="Create Recipe" />
         </form>
     </main>
 </body>

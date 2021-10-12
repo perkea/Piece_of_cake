@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const indexController= require("./controllers/index");
 const usersController = require('./controllers/users');
 const recipesController = require("./controllers/recipes");
+const ingredientsController = require("./controllers/ingredients");
 const expressSession = require('express-session');
 
 
@@ -38,6 +39,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexController);
 app.use('/', usersController);
 app.use("/recipes", recipesController);
+app.use("/ingredients", ingredientsController);
 app.use(express.static('public'))
 
 

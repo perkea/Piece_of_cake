@@ -7,10 +7,19 @@
 
 <body>
     <header>
-        <%- include('../partials/header.ejs') %>
+      
     </header>
    
     <main>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Piece of Cake</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/recipes">Gallery</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
         <section>
             <h2><%= recipe.title %></h2>
             <div class="row">
@@ -61,7 +70,11 @@
                     <div class="divider"></div>
             <div class="section">
               <h5>Ingredients</h5>
-              <p> <%= recipe.ingredients %></p>
+              <% recipe.ingredients.forEach(ingredient => { %>
+               <li><%= ingredient %></li> 
+               
+              <%})%>
+             
             </div>
                     </div>
                 <div class="col s6"> <div class="divider"></div>
@@ -69,7 +82,7 @@
                     <div class="divider"></div>
                     <div class="section">
                       <h5>Directions</h5>
-                      <p><%= recipe.directions %></p>
+                      <li><%= recipe.directions %></li>
                     </div>
                 </div>
                 <div class="col s3"></div>

@@ -15,8 +15,9 @@
         Preparation time: <input value="<%= recipe.preparation_time %>" type="number" name="preparation_time" /><br>
         Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
         Image: <input value="<%= recipe.image %>" type="text" name="image" /><br>
-        Ingredients:<input value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
-        Directions:<input value="<%= recipe.directions %>" type="text" name="directions" /><br>
+        Ingredients:<input required value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
+        <input type="text" name="ingredients" /><br>
+        Directions:<input required value="<%= recipe.directions %>" type="text" name="directions[]" /><br>
         <input type="submit" value="Submit Changes" />
         <i class="material-icons right"></i>
         <a href="/recipes">Back to Main Gallery</a>
@@ -45,3 +46,14 @@
 </body>
 
 </html>
+
+<!-- <main>
+    <div class="container">
+      <h1 class="app-title">todos</h1>
+      <ul class="ingredient-list js-ingredient-list"></ul>
+  
+      <form class="js-form">
+        <input autofocus type="text" aria-label="Enter a new ingredient" placeholder="E.g. Build a web app" class="js-todo-input">
+      </form>
+    </div>
+  </main> -->

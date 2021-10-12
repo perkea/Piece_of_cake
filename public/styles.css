@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
 
 /* VARIABLES */
@@ -160,66 +160,87 @@
     height:480px;
     width:720px;  
   }
+  .recipe_intro{
+    margin-top: 15px; 
+  }
 .recipe_card{
     background-color: var(--main-color1);
 }
   .nav-wrapper{
     background-color: var(--main-color4);
     height:200%;
-    margin-left: 200px;
+    
   }
-  
+  .recipe_main{
+    margin-top: 70px;
+    margin-left: 90px;
+} 
+  .new_recipe{
+    font:var(--main-font-color1);
+    color:#7B3F0C; 
+    margin-left: 30px;
+    margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem;
+        width: 50.75rem;
+        height: 53.375rem;
+        border-radius: 7px;
+        border: 1px solid #423f3f;
+        background-color:burlywood;
+        color: white;
+        box-shadow: -2px -2px 5px purple, 3px 3px 5px rgb(0 0 0 / 20%);
+        transition:box-shadow 399ms ease-in-out;
+        border-radius: 10px;
+        background-color: var(--main-color1);
+        border-radius: 10px;
+        border: 5px solid black;
+        
+    }
+    
+   .new_recipe:hover{
+        background-color:plum;
+        box-shadow: inset -2px -2px 5px palevioletred, inset 3px 3px 5px rgb(0 0 0 / 20%);
+    }
+    .create_recipe{
+            width: 200px;
+           height: 80px;
+           box-shadow: -2px -2px 10px purple, 3px 3px 5px rgb(0 0 0 / 20%);
+           border: none;
+           cursor: pointer;
+           outline: none;
+           transition:box-shadow 399ms ease-in-out;
+           background-color: lightslategray;
+           border-radius: 10px;
+           background-color: darkseagreen;
+           color: black;
+           font-size: 32px;
+           margin: auto;
+           margin-bottom: 66px;
+       }
+       
+       .create_recipe:hover {
+           background-color: #A0BE73;
+           box-shadow: inset -2px -2px 5px green, inset 3px 3px 5px rgb(0 0 0 / 20%);
+       }
+    
   .left hide-on-med-and-down{
    font:50px; 
   
   }
- /* (A) CONTAINERS + SHARED */
-#shop-list, #shop-add {
-    display: flex;
-    flex-wrap: wrap;
-    background: #f2f2f2;
-    border: 1px solid #eee;
-    padding: 10px;
-    max-width: 400px;
-  }
-  .item-row, .item-name, .item-del, .item-ok, #shop-item, #shop-add-btn {
-    box-sizing: border-box; 
-    border: 0;
-  }
-  .item-name, #shop-item {
-    background: #fff;
-    padding: 10px;
-  }
-  .item-del, .item-ok, #shop-add-btn {
-    cursor: pointer;
-    color: #fff;
-  }
+
+.card-content{
+    background-color: var(--main-color1);
+}
+ /* .card-action{
+     background-color: var(--main-color2);
+ }  */
+
+ .card .card-action {
+    background-color: var(--main-color2);
+}
   
-  /* (B) SHOPPING LIST */
-  .item-row {
-    display: flex;
-    width: 100%;
-    margin: 5px 0;
-  }
-  .item-name { width: 60%; }
-  .item-name.item-got { background: #f5fffa; }
-  .item-name.item-got:before {
-    content: "\02713";
-    margin-right: 5px;
-    font-weight: bold;
-    color: #00d036;
-  }
   
-  .item-del, .item-ok { width: 20%; }
-  .item-del { background: #de1919; }
-  .item-ok { background: #5a75d6; }
   
-  /* (C) ADD ITEM */
-  #shop-item { width: 75% }
-  #shop-add-btn {
-    width: 25%;
-    background: #5a75d6;
-  }
   
-  /* [DOES NOT MATTER] */
-  html, body { font-family: arial, sans-serif }
