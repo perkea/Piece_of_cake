@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "node-sass ./scss/theme.scss ./css/materialize-theme.css",
+    "build-sass": "node-sass ./sass/materialize.scss ./public/materialize-theme.css",
     "start": "node server.js"
   },
   "keywords": [],
