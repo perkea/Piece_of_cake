@@ -248,6 +248,26 @@ border-radius: 50%;
     background-color: var(--main-color2);
 }
   
-  
+/* .waves-effect waves-light btn{
+    width: 200px;
+   height: 80px;
+   box-shadow: -2px -2px 10px purple, 3px 3px 5px rgb(0 0 0 / 20%);
+   border: none;
+   cursor: pointer;
+   outline: none;
+   transition:box-shadow 399ms ease-in-out;
+   background-color: lightslategray;
+   border-radius: 10px;
+   background-color: darkseagreen;
+   color: black;
+   font-size: 32px;
+   margin: auto;
+   margin-bottom: 66px;
+}
+
+.waves-effect waves-light btn:hover {
+   background-color: #A0BE73;
+   box-shadow: inset -2px -2px 5px green, inset 3px 3px 5px rgb(0 0 0 / 20%);
+}  */
   
   
