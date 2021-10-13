@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1>Welcome</h1>
+    <h1 class = "greeting">Welcome</h1>
     <!-- ============= CONTAINER ============== -->
     <div class="login_container">
         <!-- sidebar -->
@@ -29,7 +29,7 @@
 
             <%}%>
         <p>Please enter your credentials</p>
-        <form action="login" method="POST">
+        <form action="login" method="POST" autocomplete="off">
             <fieldset class="account-info">
             <label>
                 Username:
@@ -41,7 +41,7 @@
             </label><br>
            
             </fieldset class = "account-info">
-            <input type="submit" value="Login">
+            <input class = "login_button" type="submit" value="Login">
         </form>
     </div>
  

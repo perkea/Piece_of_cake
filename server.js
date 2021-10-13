@@ -3,10 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require("morgan");
 const methodOverride = require('method-override');
-const indexController= require("./controllers/index");
+// const indexController= require("./controllers/index");
 const usersController = require('./controllers/users');
 const recipesController = require("./controllers/recipes");
-const ingredientsController = require("./controllers/ingredients");
+// const ingredientsController = require("./controllers/ingredients");
 const expressSession = require('express-session');
 
 
@@ -36,10 +36,10 @@ app.use(expressSession({
 }));
 app.use(methodOverride('_method'));
 ////////////////////////////////////////Routes//////////////////////////////
-app.use('/', indexController);
+// app.use('/', indexController);
 app.use('/', usersController);
 app.use("/recipes", recipesController);
-app.use("/ingredients", ingredientsController);
+// app.use("/ingredients", ingredientsController);
 app.use(express.static('public'))
 
 

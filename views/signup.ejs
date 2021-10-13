@@ -16,9 +16,18 @@
 </head>
 
 <body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img
+                    src="../recipes/d9652655a8a44daaa15270d90dde3e7d(1).png" />Piece of Cake</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
     
     <!-- ============= CONTAINER ============== -->
-    <div class="container">
+    <div class="signup_container">
         <!-- sidebar -->
         <div class="sidebar">
 
@@ -28,21 +37,21 @@
           <h1>Sign Up</h1>
           <p>Please enter a username and password to join</p>
           <!-- START FORM -->
-          <form action="signup" method="POST">
+          <form action="signup" method="POST" autocomplete="off">
             <!-- fieldset for account info -->
             <fieldset class="account-info">
               <!-- legend for account info -->
-              <legend>ISLANDER INFORMATION</legend>
+              <legend>User info</legend>
                 <!-- username -->
-                <label>USERNAME</label>
-                <input type="text" name = "username" required/>
+                <label class = "user_label">USERNAME</label>
+                <input class = "user_input" type="text" name = "username" required/>
                 <!-- password -->
-                <label>PASSWORD</label>
-                <input type="password" name = "password" required>
+                <label class = "password_label">PASSWORD</label>
+                <input class = "password-input" type="password" name = "password" required>
                 
             </fieldset>
             <!-- submit button -->
-            <input type="submit" value="Sign Up">
+            <input class = "signup_button" type="submit" value="Sign Up">
           </form>
         </div>
       </div>

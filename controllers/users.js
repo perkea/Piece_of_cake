@@ -61,7 +61,7 @@ router.post('/login', (req, res) => {
 
         req.session.user = foundUser._id;
 
-        res.redirect('/dashboard')
+        res.redirect('/recipes')
     });
 });
 //////////////////////////////// present user with signup page///////////////
@@ -95,23 +95,9 @@ console.log('password check', tempPassword, req.body.password, isMatched)
 
 router.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/');
+        res.redirect('/signup');
     });
 });
 
-// Protected Route
-router.get('/dashboard', isAuthenticated, (req, res) => {
-    User.findById(req.session.user, (err, user) => {
-        res.render('dashboard.ejs', { user });
-    });
-});
-////////////////////// Utility Functions////////////////////
-/////////////////////// Auth middleware////////////////////
-function isAuthenticated(req, res, next) {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
-    next(); // user is authenticated, keep moving on to the next step
-}
 
 module.exports = router;

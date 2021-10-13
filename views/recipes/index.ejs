@@ -17,14 +17,16 @@
 
                 <nav>
                     <div class="nav-wrapper">
-                      <a href="#" class="brand-logo"><img src = "../recipes/d9652655a8a44daaa15270d90dde3e7d(1).png"/>Piece of Cake</a>
-                      <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="/recipes">Gallery</a></li>
-                        <li><a href ="/recipes/new">Add a Recipe</a></li>
-                        <li><a href="/login">Login</a></li>
-                      </ul>
+                        <a href="#" class="brand-logo">
+                            <img src="/logo.png" />Piece of Cake</a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="/recipes">Gallery</a></li>
+                            <li><a href="/recipes/new">Add a Recipe</a></li>
+                            <li><a href="/signup">Signup</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
                     </div>
-                  </nav>
+                </nav>
 
                 <body>
 
@@ -33,7 +35,7 @@
                     <!-- <img src = "https://cdn.pixabay.com/photo/2017/12/05/16/43/egg-nog-2999740_1280.jpg"/> -->
 
 
-                   
+
 
 
 
@@ -68,64 +70,29 @@
         </main>
     </header>
     <main>
+        <h2 class="header">List of Recipes</h2>
 
         <div class="row">
             <div class="col s12 m7">
-                    <% for(let i = 0; i < recipes.length; i++){ %>
-              <div class="card">
-            
-                <div class="card-image">
-                    <img class="recipe_img" src="<%= recipes[i].image %>" />
-                 
-                </div>
-                <div class="card-content">
-                    <span class="card-title"><a class="recipe_title" href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a></span>
-                    <p class="recipe_intro"><%= recipes[i].intro %></p>
-                </div>
-                <div class="card-action">
-                    <a href="/recipes/<%= recipes[i]._id %>">Read More</a>
-                </div>
-              </div>
-              <% } %>
-            </div>
-          </div>
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="col s12 m7 recipe_card">
-            <h2 class="header">List of Recipes</h2>
-           
                 <% for(let i = 0; i < recipes.length; i++){ %>
-                    <div class="card horizontal">
-              <div class="card-image">
-               
-                    <img class="recipe_img" src="<%= recipes[i].image %>" />
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                    <a class="recipe_title" href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a>
-                    <p class="recipe_intro"><%= recipes[i].intro %></p>
+                <div class="card">
+
+                    <div class="card-image">
+                        <img class="recipe_img" src="<%= recipes[i].image %>" />
+
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><a class="recipe_title"
+                                href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a></span>
+                        <p class="recipe_intro"><%= recipes[i].intro %></p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/recipes/<%= recipes[i]._id %>">Read More</a>
+                    </div>
                 </div>
-                <div class="card-action">
-                  <a href="/recipes/<%= recipes[i]._id %>">Read More</a>
-                </div>
-              </div>
-            
+                <% } %>
             </div>
-            <% } %>
-          </div> 
+        </div>
     </main>
 </body>
 

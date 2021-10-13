@@ -1,37 +1,21 @@
 const express = require("express");
 const recipesRouter = express.Router();
 const Recipe = require("../models/recipe");
-const RecipeSeed = require("../models/recipeSeed");
 const User = require("../models/user");
-const TestIngredients2 = require("../models/ingredients");
-
-recipesRouter.put("/ingredients", (req, res) => {
-    console.log(req.body, req.query, "request");
-    TestIngredients2.deleteMany({}, (error, allTestIngredients2s) => {
-
-    })
-    TestIngredients2.create({
-        title:"chocolate cake",
-        ingredients: req.body.ingredients,
-    }, (error, data) => {
-        console.log("saved data", error, data);
-        res.send(data);
-    });
-});
 
 
-////////////////////////Seed route////////////////////////////////////
-recipesRouter.get("/seed", (req, res) => {
-    Recipe.deleteMany({}, (error, allRecipes) => {
+// ////////////////////////Seed route////////////////////////////////////
+// recipesRouter.get("/seed", (req, res) => {
+//     Recipe.deleteMany({}, (error, allRecipes) => {
 
-    })
-    Recipe.create(recipeSeed, (error, data) => {
-        res.redirect("/recipes");
-    });
-});
+//     })
+//     Recipe.create(recipeSeed, (error, data) => {
+//         res.redirect("/recipes");
+//     });
+// });
 
 //////////////////////////Index//////////////////////////
-recipesRouter.get("/", (req, res) => {
+recipesRouter.get("/", isAuthenticated, (req, res) => {
     Recipe.find({}, (error, foundRecipes) => {
         res.render("recipes/index.ejs", {
             recipes: foundRecipes,
@@ -42,7 +26,7 @@ recipesRouter.get("/", (req, res) => {
 
 
 ///////////////////////////////New/////////////////////////
-recipesRouter.get('/new', (req, res) => {
+recipesRouter.get('/new', isAuthenticated, (req, res) => {
     User.find({}, (err, foundUsers) => {
         res.render('recipes/new.ejs', {
             users: foundUsers,
@@ -51,7 +35,7 @@ recipesRouter.get('/new', (req, res) => {
     })
 });
 //////////////////////////// Delete////////////////////////////////////////////////////
-recipesRouter.delete("/:id", (req, res) => {
+recipesRouter.delete("/:id", isAuthenticated, (req, res) => {
     Recipe.findByIdAndRemove(req.params.id, (err, data) => {
         console.log("selected id", req.params.id);
         console.log("this is the error", err);
@@ -61,7 +45,7 @@ recipesRouter.delete("/:id", (req, res) => {
 })
 
 ///////////////////////////////// Update//////////////////////////////////////
-recipesRouter.put("/:id", (req, res) => {
+recipesRouter.put("/:id", isAuthenticated, (req, res) => {
     if (req.body.completed === "on") {
         req.body.completed = true
     } else {
@@ -81,7 +65,7 @@ recipesRouter.put("/:id", (req, res) => {
 })
 
 /////////////////////////////// Create/////////////////////////////
-recipesRouter.post('/', (req, res) => {
+recipesRouter.post('/', isAuthenticated, (req, res) => {
     console.log(req.body)
     if (req.body.completed === "on") {
         req.body.completed = true;
@@ -96,7 +80,7 @@ recipesRouter.post('/', (req, res) => {
 
 
 //////////////////////////////////// Edit////////////////////////////////////////////////
-recipesRouter.get("/:id/edit", (req, res) => {
+recipesRouter.get("/:id/edit", isAuthenticated, (req, res) => {
     Recipe.findById(req.params.id, (error, foundRecipe) => {
         res.render("recipes/edit.ejs", {
             recipe: foundRecipe,
@@ -106,7 +90,7 @@ recipesRouter.get("/:id/edit", (req, res) => {
 })
 ///////////////////////////////////Show/////////////////////////
 
-recipesRouter.get("/:id", (req, res) => {
+recipesRouter.get("/:id", isAuthenticated, (req, res) => {
     Recipe.findById(req.params.id).populate('user').exec((err, foundRecipe) => {
         console.log(foundRecipe)
         res.render('recipes/show.ejs', {
@@ -116,6 +100,16 @@ recipesRouter.get("/:id", (req, res) => {
     })
 
 });
+
+
+////////////////////// Utility Functions////////////////////
+/////////////////////// Auth middleware////////////////////
+function isAuthenticated(req, res, next) {
+    if (!req.session.user) { // user is not logged in
+        return res.redirect('/login');
+    }
+    next(); // user is authenticated, keep moving on to the next step
+}
 
 
 module.exports = recipesRouter
