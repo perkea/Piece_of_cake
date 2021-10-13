@@ -1,7 +1,6 @@
 # Piece_of_cake
 
 
-![Image](https://i.ytimg.com/vi/LoGPuqnqx0Y/maxresdefault.jpg)
 
 ## Contents
 * [Title](#piece-of-cake)
@@ -9,8 +8,7 @@
 * [Goal](#the-goal)
 * [Technologies](#technologies-used)
 * [Challenges](#challenges-faced)
-* [Screenshots](#screenshots)
-* [Deployed Link](#link-to-deployed-site)
+* 
 * [Created By](#created-by)
 * [Inspiration](#inspirational-quote)
 * [Future Enhancements](#future-enhancements)
@@ -47,7 +45,7 @@ Piece of Cake allows you to save your favorite recipes, ingredients in one place
 
 
 ## Screenshots
-![screenshot 1](screenshot.png)
+
 
 
 
