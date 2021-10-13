@@ -1,101 +1,98 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <%- include('../partials/head.ejs') %>
+  <%- include('../partials/head.ejs') %>
 </head>
-   
+
 
 <body>
-    <header>
-      
-    </header>
-   
-    <main>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Piece of Cake</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/recipes">Gallery</a></li>
-            <li><a href="/logout">Logout</a></li>
-          </ul>
+  <header>
+
+  </header>
+
+  <main>
+    <nav>
+      <div class="nav-wrapper">
+        <div>
+          <a href="/recipes" class="brand-logo">
+            <img src="/logo.png" />Piece of Cake</a>
         </div>
-      </nav>
-        <section>
-            <h2><%= recipe.title %></h2>
-            <div class="row">
-                <div class="col s1">
-                    </div>
-                <div class="col s10"> <div class="divider"></div>
-                <div class="section">
-                  <h5><img class = "recipe_img" src = "<%= recipe.image %>"/></h5>
-                </div>
-                <div class="col s1"></div>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col s3">
-                    </div>
-                <div class="col s6"> <div class="divider"></div>
-                <div class="section">
-                 <p><%= recipe.intro %></p>
-                </div>
-                <div class="col s3"></div>
-              </div>
-            </div>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/recipes">Gallery</a></li>
+          <li><a href="/recipes/new">Add a Recipe</a></li>
+          <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section>
 
 
-            <div class="row">
-                <div class="col s6">
-                    <div class="section">
-                        <h5>Preparation time</h5>
-                        <p><%= recipe.preparation_time %> minutes</p>
-                        <div class="section">
-                            <h5>Cook Time</h5>
-                            <p><%= recipe.cook_time %> minutes</p>
-                          </div>
-                      
-                    </div>
-                <div class="col s3"> <div class="divider"></div>
-                
-                    
-                </div>
-                <div class="col s3">
-                    
-                </div>
-              </div>
-            </div>
+      <!-- Navbar goes here -->
 
-            <div class="row">
-                <div class="col s3">
-                    <div class="divider"></div>
-            <div class="section">
-              <h5>Ingredients</h5>
-              <% recipe.ingredients.forEach(ingredient => { %>
-               <li><%= ingredient %></li> 
-               
-              <%})%>
-             
-            </div>
-                    </div>
-                <div class="col s6"> <div class="divider"></div>
-                <div class="section">
-                    <div class="divider"></div>
-                    <div class="section">
-                      <h5>Directions</h5>
-                      <li><%= recipe.directions %></li>
-                    </div>
-                </div>
-                <div class="col s3"></div>
-              </div>
-            </div>
-            <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
-            </form>
-            <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink">Edit</a>
-            <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
-                <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn" type="submit" value="DELETE" />
-            </form>
-        </section>
-    </main>
+      <!-- Page Layout here -->
+      <div class="container">
+
+        <div class="row">
+          <h2><%= recipe.title %></h2>
+          <div class="col s4">
+            <!-- Grey navigation panel -->
+            <h5>Preparation time</h5>
+            <p><%= recipe.preparation_time %> minutes</p>
+            <h5>Cook Time</h5>
+            <p><%= recipe.cook_time %> minutes</p>
+            <h5>Ingredients</h5>
+            <% recipe.ingredients.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+
+            <%})%>
+          </div>
+
+          <div class="col s8">
+            <!-- Teal page content  -->
+            <h5><img class="recipe_show_img" src="<%= recipe.image %>" /></h5>
+            
+            <p><%= recipe.intro %></p>
+
+            <h5>Directions</h5>
+            <li><%= recipe.directions %></li>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
+      </form>
+      <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink">Edit</a>
+      <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
+        <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn" type="submit"
+          value="DELETE" />
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>

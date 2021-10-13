@@ -2,29 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="/materialize-theme.css">
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src = "/public/script.js"></script>
+  
+
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img
-                    src="../recipes/d9652655a8a44daaa15270d90dde3e7d(1).png" />Piece of Cake</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/login">Login</a></li>
-            </ul>
+  <nav>
+    <div class="nav-wrapper">
+        <div>
+            <a href="/recipes" class="brand-logo">
+                <img src="/logo.png" />Piece of Cake</a>
         </div>
-    </nav>
+    
+    </div>
+</nav>
     
     <!-- ============= CONTAINER ============== -->
     <div class="signup_container">
@@ -34,14 +37,14 @@
         </div>
         <!-- registration container -->
         <div class="registration">
-          <h1>Sign Up</h1>
-          <p>Please enter a username and password to join</p>
+         
           <!-- START FORM -->
           <form action="signup" method="POST" autocomplete="off">
             <!-- fieldset for account info -->
             <fieldset class="account-info">
               <!-- legend for account info -->
-              <legend>User info</legend>
+              <legend> <h1>Sign Up</h1>
+                <p>It's quick and easy</p></legend>
                 <!-- username -->
                 <label class = "user_label">USERNAME</label>
                 <input class = "user_input" type="text" name = "username" required/>

@@ -33,7 +33,7 @@ body {
 
 
 .brand-logo img {
-    height: 67px;
+    height: 77px;
     vertical-align: middle;
 }
 
@@ -152,6 +152,7 @@ input.user_input {
   background-image: url("https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg");
 }
 
+
 .login_container {
   width: 80vw;
   height: 70vw;
@@ -192,6 +193,7 @@ input.user_input {
 
 .login_button{
   background-color: peru;
+  margin-bottom: 20px;
 }
 
 .index_img {
@@ -246,7 +248,11 @@ input.user_input {
   margin-top: 70px;
   margin-left: 90px;
 }
-
+.cols
+.recipe_show_img{
+  border-radius: 10px;
+  border:10px solid #7B3F0C;
+}
 .new_recipe {
   font: var(--main-font-color1);
   color: #7B3F0C;
