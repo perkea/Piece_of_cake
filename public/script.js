@@ -12,3 +12,14 @@
 //         list.appendChild(li);
 //     }
 // }
+
+
+function addIngredients() {
+    let inputVal = $("input-ingredient").val();
+    const ingredient = $(".list-parent").append(`<li class = "list">
+{inputVal}</li>`);
+inputVal = $("input-ingredient").val("");
+}
+
+
+$(".addIngredients").on("click", addIngredients);

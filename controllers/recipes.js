@@ -31,12 +31,12 @@ recipesRouter.get("/test", (req, res) => {
 
 
 recipesRouter.get("/seed", (req, res) => {
-    Recipe.deleteMany({}, (error, allRecipes)=>{
+    Recipe.deleteMany({}, (error, allRecipes) => {
         Recipe.create(recipeSeed, (error, data) => {
             res.redirect("/recipes");
         });
     });
-    
+
 });
 
 
@@ -91,12 +91,9 @@ recipesRouter.get("/", isAuthenticated, (req, res) => {
 
 ///////////////////////////////New///////////////////////////////////////////////////////////////////////
 recipesRouter.get('/new', isAuthenticated, (req, res) => {
-    User.find({}, (err, foundUsers) => {
-        res.render('recipes/new.ejs', {
-            users: foundUsers,
-            tabTitle: "Add a new Recipe",
-        });
-    })
+    res.render('recipes/new.ejs', {
+        tabTitle: "Add a new Recipe",
+    });
 });
 //////////////////////////// Delete////////////////////////////////////////////////////////////////////////////
 recipesRouter.delete("/:id", isAuthenticated, (req, res) => {

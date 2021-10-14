@@ -28,10 +28,10 @@ const recipeSeed = [{
    
 },
 {
-    title: "Chocolate Cake",
-    preparation_time:10,
-    cook_time: 20,
-    image: "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "Death by Chocolate",
+    preparation_time:30,
+    cook_time: 10,
+    image: "https://cdn.pixabay.com/photo/2017/12/14/19/47/cake-3019645_1280.jpg",
     ingredients: ["eggs", "butter", "flour"],
     directions: ["fry the eggs", "heat the oven"],
    

@@ -2,6 +2,9 @@
 <html>
 <head>
     <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
    
 
@@ -25,6 +28,75 @@
     </header>
   
     <main class = "recipe_main">
+
+        <form action="/recipes" method="POST">
+            <!--  NOTE: the form is pre-populated with values for the server-->
+            <div class="row show_container">
+                <div class="col s12 show_colume">
+                    Title:<input type="text" name="title" />
+                    Intro:<input type="text" name="intro" />
+                    Preparation time: <input type="number"
+                        name="preparation_time" />
+                    Cook time:<input type="number" name="cook_time" /><br>
+                </div>
+                <div class="col s6 ingredient-container">
+                    Ingredients:
+                    <ul class = "list_parent">
+                          <li class = "list"></li>
+                    </ul>
+                    <input class = "input-ingredient" type = "text">
+                    <button class = "add-ingredients">Add Ingredients</button>
+                </div>
+                <div class="col s6">
+    
+                    Image: <input  type="text" name="image" />
+                </div>
+                <div class="col s12">
+                    <h5>Directions</h5>
+                    
+    
+                </div>
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            <!-- <div class = "edit_changes">
+                <input type="submit" value="Submit Changes" />
+                <a href="/recipes/" class="waves-effect waves-light btn" >Make Changes</a>
+                <a href="/recipes" class="waves-effect waves-light btn" >Back to Main Gallery</a>
+             
+              </div> -->
+    
+            
+            <input type="submit" value="Submit Changes" />
+            <i class="material-icons right"></i>
+            <a href="/recipes">Back to Main Gallery</a>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          <form action="/recipes" method="POST" class = "new_recipe">
             <input placeholder = "Title" type="text" name="title" /><br>
             <input placeholder = "Intro" type="text" name="intro" /><br>

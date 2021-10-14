@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head.ejs') %>
 </head>
-    
-  
+
+
 
 <body>
-    <h1><Edit a Recipe></h1>
+    <h1>
+        <Edit a Recipe>
+    </h1>
     <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
-        Title:<input value="<%= recipe.title %>" type="text" name="title" /><br>
-       Intro:<input value="<%= recipe.intro %>" type="text" name="intro" /><br>
-        Preparation time: <input value="<%= recipe.preparation_time %>" type="number" name="preparation_time" /><br>
-        Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
-        Image: <input value="<%= recipe.image %>" type="text" name="image" /><br>
-        Ingredients:<input class = "ingredients" required value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
-        <input type="text" name="ingredients" /><br>
-        Directions:<input required value="<%= recipe.directions %>" type="text" name="directions[]" /><br>
+        <div class="row show_container">
+            <div class="col s12 show_colume">
+                Title:<input value="<%= recipe.title %>" type="text" name="title" />
+                Intro:<input value="<%= recipe.intro %>" type="text" name="intro" />
+                Preparation time: <input value="<%= recipe.preparation_time %>" type="number"
+                    name="preparation_time" /><br>
+                Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
+            </div>
+            <div class="col s6">
+                Ingredients:
+                <ul>
+                    <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
+                    <li class="list"><%= recipe.ingredients[i] %></li>
+                    <% } %>
+
+                </ul>
+            </div>
+            <div class="col s6">
+
+                Image: <input value="<%= recipe.image %>" type="text" name="image" />
+            </div>
+            <div class="col s12">
+                <h5>Directions</h5>
+                <ol>
+                    <% for(let i = 0; i < recipe.directions.length; i++){ %>
+                    <li class="list"><%= recipe.directions[i] %></li>
+                    <% } %>
+
+                </ol>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class = "edit_changes">
+             <input type="submit" value="Submit Changes" />
+            <a href="/recipes/<%= recipe._id; %>" class="waves-effect waves-light btn" >Make Changes</a>
+            <a href="/recipes" class="waves-effect waves-light btn" >Back to Main Gallery</a>
+         
+          </div>
+
+        
         <input type="submit" value="Submit Changes" />
         <i class="material-icons right"></i>
         <a href="/recipes">Back to Main Gallery</a>
     </form>
-    <style>
-        body {
-            color: plum;
-            background-color: peachpuff;
-            margin-left: 30px;
-
-        }
-
-        .prod_img {
-            width: 200px;
-            height: 200px;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        input {
-            margin-right: 50px;
-        }
-    </style>
+    
 </body>
 
 </html>
