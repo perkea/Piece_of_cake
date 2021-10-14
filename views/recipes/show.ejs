@@ -3,6 +3,7 @@
 
 <head>
   <%- include('../partials/head.ejs') %>
+  <script src = "/public/script.js"></script>
 </head>
 
 
@@ -22,74 +23,60 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/recipes">Gallery</a></li>
           <li><a href="/recipes/new">Add a Recipe</a></li>
-          <li><a href="/signup">Signup</a></li>
-          <li><a href="/login">Login</a></li>
         </ul>
       </div>
     </nav>
     <section>
 
 
-      <!-- Navbar goes here -->
+     
 
-      <!-- Page Layout here -->
-      <div class="container">
-
-        <div class="row">
+      <div class="row show_container">
+        <div class="col s12 show_colume">
           <h2><%= recipe.title %></h2>
-          <div class="col s4">
-            <!-- Grey navigation panel -->
-            <h5>Preparation time</h5>
-            <p><%= recipe.preparation_time %> minutes</p>
-            <h5>Cook Time</h5>
-            <p><%= recipe.cook_time %> minutes</p>
-            <h5>Ingredients</h5>
-            <% recipe.ingredients.forEach(ingredient => { %>
-            <li><%= ingredient %></li>
-
-            <%})%>
-          </div>
-
-          <div class="col s8">
-            <!-- Teal page content  -->
-            <h5><img class="recipe_show_img" src="<%= recipe.image %>" /></h5>
+          <p><%= recipe.intro %></p>
+          <h5>Preparation time</h5>
+          <p><%= recipe.preparation_time %> minutes</p>
+          <h5>Cook Time</h5>
+          <p><%= recipe.cook_time %> minutes</p>
+        </div>
+        <div class="col s6">
+          <h5>Ingredients</h5>
+          <ul>
+          <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
+            <li class = "list"><%= recipe.ingredients[i] %></li>
+          <% } %>
+          
+        </ul>
+        </div>
+        <div class="col s6">
+          <h5><img class="recipe_show_img" src="<%= recipe.image %>" />
+          </h5>
+        </div>
+        <div class="col s12">
+          <h5>Directions</h5>
+          <ol>
+            <% for(let i = 0; i < recipe.directions.length; i++){ %>
+              <li class = "list"><%= recipe.directions[i] %></li>
+            <% } %>
             
-            <p><%= recipe.intro %></p>
-
-            <h5>Directions</h5>
-            <li><%= recipe.directions %></li>
-
-          </div>
+            </ol>
 
         </div>
       </div>
 
+      <!-- <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
+      </form> -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
-      </form>
-      <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink">Edit</a>
+        
       <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
-        <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn" type="submit"
+        <div class = "edit_delete_link">
+          <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink show_edit">Edit</a>
+        <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn show_delete" type="submit"
           value="DELETE" />
+        </div>
+        
       </form>
     </section>
   </main>

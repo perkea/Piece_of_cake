@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
-
+const Recipe = require("../models/recipe");
+const isAuthenticated = require("../utils/auth");
 /*
 1) Stub up a basic project boilerplate
 2) Install the bcrypt library
@@ -50,7 +51,7 @@ router.post('/login', (req, res) => {
         }
 
         console.log('login', err, foundUser, foundUser.password, req.body.password)
-        
+
         const isMatched = bcrypt.compareSync(req.body.password, foundUser.password);
         console.log(isMatched)
         if (!isMatched) {
@@ -71,17 +72,17 @@ router.get("/signup", (req, res) => {
 
 router.post('/signup', (req, res) => {
     // 0) Perform a db lookup to determine if username exist 
-  // 1) Hash the password
+    // 1) Hash the password
     console.log('signup body', req.body)
     const tempPassword = req.body.password;
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-    
+
     const isMatched = bcrypt.compareSync(tempPassword, req.body.password);
-console.log('password check', tempPassword, req.body.password, isMatched)
+    console.log('password check', tempPassword, req.body.password, isMatched)
 
     // test password matching?
-    
-    
+
+
     //hash the passsword
     //gensalt generates  random string of password
     //Save the userdata to the data base with the hash version of the password
@@ -98,6 +99,21 @@ router.get('/logout', (req, res) => {
         res.redirect('/signup');
     });
 });
+
+//Protected route
+router.get("/login", isAuthenticated, (req, res) => {
+    User.findById(req.session.user, (err, user) => {
+        Recipe.find({
+            user: user._id
+        }, (err, recipes) => {
+            res.render("login.ejs"), {
+                user,
+                recipes
+            };
+        })
+    })
+});
+
 
 
 module.exports = router;

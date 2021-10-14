@@ -2,19 +2,83 @@ const express = require("express");
 const recipesRouter = express.Router();
 const Recipe = require("../models/recipe");
 const User = require("../models/user");
-
+const isAuthenticated = require("../utils/auth");
+const recipeSeed = require("../models/recipeSeed");
 
 // ////////////////////////Seed route////////////////////////////////////
-// recipesRouter.get("/seed", (req, res) => {
-//     Recipe.deleteMany({}, (error, allRecipes) => {
+recipesRouter.get("/test", (req, res) => {
+    // User.find({}).populate("recipes").then(user =>{
+    //     res.json(user);
+    //     console.log(user);
+    // })})
+    // //     // await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec()
+    Recipe.find({
+        title: "Strawberry Chia Delite"
+    }).populate('user').exec((error, foundRecipes) => {
 
-//     })
-//     Recipe.create(recipeSeed, (error, data) => {
-//         res.redirect("/recipes");
-//     });
+        console.log(foundRecipes);
+
+        res.send("done");
+    });
+
+
+    // Recipe.deleteMany({}, (error, allRecipes) => {
+
+})
+// Recipe.create(recipeSeed, (error, data) => {
+//     res.redirect("/recipes");
 // });
 
-//////////////////////////Index//////////////////////////
+
+recipesRouter.get("/seed", (req, res) => {
+    Recipe.deleteMany({}, (error, allRecipes)=>{
+        Recipe.create(recipeSeed, (error, data) => {
+            res.redirect("/recipes");
+        });
+    });
+    
+});
+
+
+// /Seed route
+// productRouter.get("/seed", (req, res) => {
+//   Product.deleteMany({}, (error, allProducts) => {
+
+//   })
+//   Product.create(productSeed, (error, data) => {
+//     res.redirect("/products");
+//   });
+// });
+
+
+// recipesRouter.get("/test/new", (req, res) => {
+//     // User.find({}).populate("recipes").then(user =>{
+//     //     res.json(user);
+//     //     console.log(user);
+//     // })})
+//     // //     // await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec()
+//     Recipe.create({
+//         title: "Strawberry Chia Delite",
+//         ingredients: ["eggs", "stew", "milk"],
+//         directions: ["cook the food", "boil water"],
+//         preparation_time: 8,
+//         cooking_time: 9,
+//         image: "https://cdn.pixabay.com/photo/2013/11/28/04/15/cake-219595__340.jpg"
+
+
+//     }).populate('user').exec((error, foundRecipes) => {
+
+//         console.log(foundRecipes);
+
+//         res.send("done");
+//     });
+
+
+// Recipe.deleteMany({}, (error, allRecipes) => {
+
+
+
+//////////////////////////Index/////////////////////////////////////////////////////////////////////////////
 recipesRouter.get("/", isAuthenticated, (req, res) => {
     Recipe.find({}, (error, foundRecipes) => {
         res.render("recipes/index.ejs", {
@@ -25,7 +89,7 @@ recipesRouter.get("/", isAuthenticated, (req, res) => {
 });
 
 
-///////////////////////////////New/////////////////////////
+///////////////////////////////New///////////////////////////////////////////////////////////////////////
 recipesRouter.get('/new', isAuthenticated, (req, res) => {
     User.find({}, (err, foundUsers) => {
         res.render('recipes/new.ejs', {
@@ -34,7 +98,7 @@ recipesRouter.get('/new', isAuthenticated, (req, res) => {
         });
     })
 });
-//////////////////////////// Delete////////////////////////////////////////////////////
+//////////////////////////// Delete////////////////////////////////////////////////////////////////////////////
 recipesRouter.delete("/:id", isAuthenticated, (req, res) => {
     Recipe.findByIdAndRemove(req.params.id, (err, data) => {
         console.log("selected id", req.params.id);
@@ -44,7 +108,7 @@ recipesRouter.delete("/:id", isAuthenticated, (req, res) => {
     })
 })
 
-///////////////////////////////// Update//////////////////////////////////////
+///////////////////////////////// Update///////////////////////////////////////////////////////////////////
 recipesRouter.put("/:id", isAuthenticated, (req, res) => {
     if (req.body.completed === "on") {
         req.body.completed = true
@@ -64,7 +128,7 @@ recipesRouter.put("/:id", isAuthenticated, (req, res) => {
     )
 })
 
-/////////////////////////////// Create/////////////////////////////
+/////////////////////////////// Create/////////////////////////////////////////////////////////////////////
 recipesRouter.post('/', isAuthenticated, (req, res) => {
     console.log(req.body)
     if (req.body.completed === "on") {
@@ -91,10 +155,10 @@ recipesRouter.get("/:id/edit", isAuthenticated, (req, res) => {
 ///////////////////////////////////Show/////////////////////////
 
 recipesRouter.get("/:id", isAuthenticated, (req, res) => {
-    Recipe.findById(req.params.id).populate('user').exec((err, foundRecipe) => {
-        console.log(foundRecipe)
+    Recipe.findById(req.params.id).populate('user').exec((err, recipe) => {
+        console.log(err, recipe)
         res.render('recipes/show.ejs', {
-            recipe: foundRecipe,
+            recipe: recipe,
             tabTitle: 'Recipe',
         })
     })
@@ -104,12 +168,12 @@ recipesRouter.get("/:id", isAuthenticated, (req, res) => {
 
 ////////////////////// Utility Functions////////////////////
 /////////////////////// Auth middleware////////////////////
-function isAuthenticated(req, res, next) {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
-    next(); // user is authenticated, keep moving on to the next step
-}
+// function isAuthenticated(req, res, next) {
+//     if (!req.session.user) { // user is not logged in
+//         return res.redirect('/login');
+//     }
+//     next(); // user is authenticated, keep moving on to the next step
+// }
 
 
 module.exports = recipesRouter

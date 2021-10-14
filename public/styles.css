@@ -248,10 +248,19 @@ input.user_input {
   margin-top: 70px;
   margin-left: 90px;
 }
-.cols
+.show_colume{
+margin-bottom: 50px;
+
+}
+.show_container{
+ border:20px solid peru; 
+}
 .recipe_show_img{
   border-radius: 10px;
   border:10px solid #7B3F0C;
+}
+.waves-effect{
+margin-left: 370px;
 }
 .new_recipe {
   font: var(--main-font-color1);

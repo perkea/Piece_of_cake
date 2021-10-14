@@ -15,7 +15,7 @@
         Preparation time: <input value="<%= recipe.preparation_time %>" type="number" name="preparation_time" /><br>
         Cook time:<input value="<%= recipe.cook_time %>" type="number" name="cook_time" /><br>
         Image: <input value="<%= recipe.image %>" type="text" name="image" /><br>
-        Ingredients:<input required value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
+        Ingredients:<input class = "ingredients" required value="<%= recipe.ingredients %>" type="text" name="ingredients" /><br>
         <input type="text" name="ingredients" /><br>
         Directions:<input required value="<%= recipe.directions %>" type="text" name="directions[]" /><br>
         <input type="submit" value="Submit Changes" />
