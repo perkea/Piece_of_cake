@@ -8,7 +8,7 @@
 * [Goal](#the-goal)
 * [Technologies](#technologies-used)
 * [Challenges](#challenges-faced)
-![Alt text](wireframes.png "Optional Title")
+* ![Alt text](wireframes.png "Optional Title")
 * [DeployedLink](https://piece-of-cake1.herokuapp.com/login)
 * [Created By](#created-by)
 * [Inspiration](#inspirational-quote)
