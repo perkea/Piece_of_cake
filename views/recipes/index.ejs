@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <%- include ('../partials/head.ejs') %>
 </head>
+
 <body>
     <header>
         <main>
@@ -15,8 +17,8 @@
                         </div>
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
                             <li><a href="/recipes/new">Add a Recipe</a></li>
-                            <li><a href="/logout">Logout</a></li>
                             <li class="active"><a href="/recipes">Gallery</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -36,26 +38,27 @@
         <h2 class="header">List of Recipes</h2>
 
         <div class="row">
-                <% for(let i = 0; i < recipes.length; i++){ %>
-                <div class="col s4">
-                    <div class="card large2 large ">
+            <% for(let i = 0; i < recipes.length; i++){ %>
+            <div class="col s4">
+                <div class="card large2 large ">
 
-                        <div class="card-image">
-                            <img class="recipe_img" src="<%= recipes[i].image %>" />
+                    <div class="card-image">
+                        <img class="recipe_img" src="<%= recipes[i].image %>" />
 
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title"><a class="recipe_title"
-                                    href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a></span>
-                            <p class="recipe_intro"><%= recipes[i].intro %></p>
-                        </div>
-                        <div class="card-action">
-                            <a href="/recipes/<%= recipes[i]._id %>">Read More</a>
-                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><a class="recipe_title"
+                                href="/recipes/<%= recipes[i]._id %>"><%= recipes[i].title %></a></span>
+                        <p class="recipe_intro"><%= recipes[i].intro %></p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/recipes/<%= recipes[i]._id %>">Read More</a>
                     </div>
                 </div>
-                <% } %>
+            </div>
+            <% } %>
         </div>
     </main>
 </body>
+
 </html>

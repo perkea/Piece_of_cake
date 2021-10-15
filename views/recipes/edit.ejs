@@ -5,8 +5,6 @@
     <%- include('../partials/head.ejs') %>
 </head>
 
-
-
 <body>
     <nav>
         <div class="nav-wrapper">
@@ -16,8 +14,8 @@
             </div>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/recipes/new">Add a Recipe</a></li>
+                <li class="active"><a href="/recipes">Gallery</a></li>
                 <li><a href="/logout">Logout</a></li>
-                <li class="active"><a href="collapsible.html">Gallery</a></li>
             </ul>
         </div>
     </nav>
@@ -43,7 +41,7 @@
                 </ul>
             </div>
             <div class="col s6">
-     Image: <input value="<%= recipe.image %>" type="text" name="image" />
+                Image: <input value="<%= recipe.image %>" type="text" name="image" />
             </div>
             <div class="col s12">
                 <h5>Directions</h5>
@@ -52,13 +50,13 @@
                     <li class="list"><%= recipe.directions[i] %></li>
                     <% } %>
                 </ol>
-                </div>
+            </div>
         </div>
 
         <div class="changes">
             <input type="submit" value="Submit Changes" class="waves-effect waves-light btn" /></a>
         </div>
-        
+
     </form>
 
 </body>

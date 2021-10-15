@@ -7,28 +7,12 @@ const recipeSeed = require("../models/recipeSeed");
 
 // ////////////////////////Seed route////////////////////////////////////
 recipesRouter.get("/test", (req, res) => {
-    // User.find({}).populate("recipes").then(user =>{
-    //     res.json(user);
-    //     console.log(user);
-    // })})
-    // //     // await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec()
     Recipe.find({
         title: "Strawberry Chia Delite"
     }).populate('user').exec((error, foundRecipes) => {
-
-        console.log(foundRecipes);
-
         res.send("done");
     });
-
-
-    // Recipe.deleteMany({}, (error, allRecipes) => {
-
 })
-// Recipe.create(recipeSeed, (error, data) => {
-//     res.redirect("/recipes");
-// });
-
 
 recipesRouter.get("/seed", (req, res) => {
     Recipe.deleteMany({}, (error, allRecipes) => {
@@ -38,46 +22,6 @@ recipesRouter.get("/seed", (req, res) => {
     });
 
 });
-
-
-// /Seed route
-// productRouter.get("/seed", (req, res) => {
-//   Product.deleteMany({}, (error, allProducts) => {
-
-//   })
-//   Product.create(productSeed, (error, data) => {
-//     res.redirect("/products");
-//   });
-// });
-
-
-// recipesRouter.get("/test/new", (req, res) => {
-//     // User.find({}).populate("recipes").then(user =>{
-//     //     res.json(user);
-//     //     console.log(user);
-//     // })})
-//     // //     // await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec()
-//     Recipe.create({
-//         title: "Strawberry Chia Delite",
-//         ingredients: ["eggs", "stew", "milk"],
-//         directions: ["cook the food", "boil water"],
-//         preparation_time: 8,
-//         cooking_time: 9,
-//         image: "https://cdn.pixabay.com/photo/2013/11/28/04/15/cake-219595__340.jpg"
-
-
-//     }).populate('user').exec((error, foundRecipes) => {
-
-//         console.log(foundRecipes);
-
-//         res.send("done");
-//     });
-
-
-// Recipe.deleteMany({}, (error, allRecipes) => {
-
-
-
 //////////////////////////Index/////////////////////////////////////////////////////////////////////////////
 recipesRouter.get("/", isAuthenticated, (req, res) => {
     Recipe.find({}, (error, foundRecipes) => {
@@ -88,7 +32,6 @@ recipesRouter.get("/", isAuthenticated, (req, res) => {
     });
 });
 
-
 ///////////////////////////////New///////////////////////////////////////////////////////////////////////
 recipesRouter.get('/new', isAuthenticated, (req, res) => {
     res.render('recipes/new.ejs', {
@@ -98,9 +41,6 @@ recipesRouter.get('/new', isAuthenticated, (req, res) => {
 //////////////////////////// Delete////////////////////////////////////////////////////////////////////////////
 recipesRouter.delete("/:id", isAuthenticated, (req, res) => {
     Recipe.findByIdAndRemove(req.params.id, (err, data) => {
-        console.log("selected id", req.params.id);
-        console.log("this is the error", err);
-        console.log("this is the deleted item", data);
         res.redirect("/recipes")
     })
 })
@@ -112,14 +52,12 @@ recipesRouter.put("/:id", isAuthenticated, (req, res) => {
     } else {
         req.body.completed = false
     }
-    console.log('update req.body', req.params.id, req.body);
     Recipe.findByIdAndUpdate(
         req.params.id,
         req.body, {
-            new: true, // returns the document after the update
+            new: true,
         },
         (error, updatedRecipe) => {
-            console.log('after update', updatedRecipe);
             res.redirect(`/recipes/${req.params.id}`)
         }
     )
@@ -134,7 +72,7 @@ recipesRouter.post('/', isAuthenticated, (req, res) => {
     }
 
     Recipe.create(req.body, (err, createdRecipe) => {
-        console.log("new recipe",res.body);
+
         res.redirect('/recipes');
     });
 });
@@ -153,7 +91,6 @@ recipesRouter.get("/:id/edit", isAuthenticated, (req, res) => {
 
 recipesRouter.get("/:id", isAuthenticated, (req, res) => {
     Recipe.findById(req.params.id).populate('user').exec((err, recipe) => {
-        console.log(err, recipe)
         res.render('recipes/show.ejs', {
             recipe: recipe,
             tabTitle: 'Recipe',
@@ -161,16 +98,5 @@ recipesRouter.get("/:id", isAuthenticated, (req, res) => {
     })
 
 });
-
-
-////////////////////// Utility Functions////////////////////
-/////////////////////// Auth middleware////////////////////
-// function isAuthenticated(req, res, next) {
-//     if (!req.session.user) { // user is not logged in
-//         return res.redirect('/login');
-//     }
-//     next(); // user is authenticated, keep moving on to the next step
-// }
-
 
 module.exports = recipesRouter

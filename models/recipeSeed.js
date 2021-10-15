@@ -190,7 +190,7 @@ const recipeSeed = [{
     },
     {
         title: "Rasberry Delite",
-        intro: "",
+        intro: "Fresh Raspberries, whipped cream and graham crackers are the stars in this no bake raspberry delight!  This is a no bake refrigerator dessert that is perfect for a summertime celebration.",
         preparation_time: 20,
         cook_time: 20,
         image: "https://cdn.pixabay.com/photo/2017/03/03/18/40/quark-2114690_1280.jpg",

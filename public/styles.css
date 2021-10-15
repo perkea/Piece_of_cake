@@ -13,28 +13,19 @@
   --main-color3: #E8DCCA;
   --main-color4: #7B3F0C;
   --main-font-color1: white;
-
-
-
 }
-
-
 
 
 /* GENERAL */
 body {
-
   font-family: helvetica;
   background-color: var(--main-color3);
   color: black;
-
-
 }
 
-
 .brand-logo img {
-    height: 77px;
-    vertical-align: middle;
+  height: 77px;
+  vertical-align: middle;
 }
 
 /* CONTAINERS */
@@ -43,7 +34,7 @@ body {
   height: 70vw;
   background-color: var(--main-color3);
   margin: 50px auto;
-  margin-top:70px;
+  margin-top: 70px;
   display: flex;
   border-radius: 10px;
   box-shadow: 1px 1px 10px #ddd,
@@ -54,7 +45,6 @@ body {
 
 .sidebar {
   width: 50%;
-  /* background-image: url("https://cdn.pixabay.com/photo/2018/06/22/14/44/creme-brulee-3490886__480.jpg"); */
   background-image: url("https://cdn.pixabay.com/photo/2020/05/11/15/06/food-5158702__480.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,26 +73,31 @@ h1 {
 /* FORMS */
 .account-info {
   color: yellowgreen;
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
+  ;
 }
 
 .user_label {
   color: white;
   font-size: 12px;
 }
+
 .password_label {
   color: white;
   font-size: 12px;
 }
+
 input.user_input {
   color: white;
 }
+
 .input.password_input {
   color: white;
   font-size: 12px;
 }
-.signup_button{
-  box-shadow: -2px -2px 10px rgb(190, 93, 36), 3px 3px 5px rgb(0 0 0 / 20%); 
+
+.signup_button {
+  box-shadow: -2px -2px 10px rgb(190, 93, 36), 3px 3px 5px rgb(0 0 0 / 20%);
   cursor: pointer;
   outline: none;
   transition: box-shadow 399ms ease-in-out;
@@ -119,6 +114,7 @@ input.user_input {
   background-color: #972824;
   box-shadow: inset -2px -2px 5px palevioletred, inset 3px 3px 5px rgb(0 0 0 / 20%);
 }
+
 .indexTitle {
   color: var(--main-color2);
   margin-left: 200px;
@@ -169,18 +165,16 @@ input.user_input {
 
 .login_sidebar {
   width: 50%;
-  /* background-image: url("https://cdn.pixabay.com/photo/2018/06/22/14/44/creme-brulee-3490886__480.jpg"); */
-  /* background-image: url("https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg"); */
-  /* background-image: url("https://cdn.pixabay.com/photo/2017/03/31/18/02/strawberry-dessert-2191973_1280.jpg"); */
   background-image: url("https://cdn.pixabay.com/photo/2016/06/17/15/35/strawberries-1463444__480.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px 0 0 10px;
 }
 
-.greeting{
-  margin-left:50px;
+.greeting {
+  margin-left: 50px;
 }
+
 .login_registration {
   width: 50%;
   background: var(--main-color2);
@@ -191,33 +185,10 @@ input.user_input {
   color: #CA9C52;
 }
 
-/* .login_button{
-  background-color: peru;
-  margin-bottom: 20px;
-}
-.login_button{
-  box-shadow: -2px -2px 10px rgb(190, 93, 36), 3px 3px 5px rgb(0 0 0 / 20%); 
-  cursor: pointer;
-  outline: none;
-  transition: box-shadow 399ms ease-in-out;
-  background-color: lightslategray;
-  border-radius: 10px;
-  background-color: rgba(104, 11, 11, 0.445);
-  color: black;
-  font-size: px;
-  margin: auto;
-  margin-bottom: 66px;
-}
-
-.login_button:hover {
-  background-color: #972824;
-  box-shadow: inset -2px -2px 5px palevioletred, inset 3px 3px 5px rgb(0 0 0 / 20%);
-} */
-
 .index_img {
   border: none;
   height: 570px;
-  width: 120%; 
+  width: 120%;
 }
 
 .card {
@@ -246,15 +217,17 @@ input.user_input {
 .recipe_intro {
   margin-top: 15px;
 }
-.header-quote{
-text-align: center;
-margin-top:5px;
+
+.header-quote {
+  text-align: center;
+  margin-top: 5px;
 
 }
 
-nav .nav-wrapper{
+nav .nav-wrapper {
   height: 130%;
 }
+
 .nav-wrapper {
   background-color: var(--main-color4);
   height: 250%;
@@ -265,16 +238,13 @@ nav .nav-wrapper{
   margin-top: 70px;
   margin-left: 90px;
 }
-.background_img {
-  /* position: relative;
-  text-align: center;
-  color: white; */
+
+.user_label {
+  color: green;
 }
-.user_label{
-  color:green;
-}
-.password_label{
-  color:green;
+
+.password_label {
+  color: green;
 }
 
 .password-input {
@@ -290,11 +260,12 @@ nav .nav-wrapper{
   font-size: 32px;
   color: blanchedalmond;
 }
+
 .index_img {
   position: relative;
   border: none;
   height: 570px;
-  width: 100%; 
+  width: 100%;
 }
 
 .card.large2 {
@@ -305,21 +276,27 @@ nav .nav-wrapper{
   margin-top: 18px;
 }
 
-.show_container{
- border:20px solid peru; 
- margin-top: 90px;
+.show_container {
+  border: 20px solid peru;
+  margin-top: 90px;
 }
-.recipe_show_img{
+
+.recipe_show_img {
   border-radius: 10px;
-  border:10px solid #7B3F0C;
+  border: 10px solid #7B3F0C;
+  width: 100%;
+  height: 350px;
 }
-.show_edit{
-  color:black
+
+.show_edit {
+  color: black
 }
-a.waves-effect{
-margin-left: 10px;
-background-color: brown;
+
+a.waves-effect {
+  margin-left: 10px;
+  background-color: brown;
 }
+
 .new_recipe {
   font: var(--main-font-color1);
   color: #7B3F0C;
@@ -384,5 +361,3 @@ background-color: brown;
 .card .card-action {
   background-color: var(--main-color2);
 }
-
-
