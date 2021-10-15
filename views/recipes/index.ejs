@@ -1,73 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <%- include ('../partials/head.ejs') %>
-
 </head>
-
-
 <body>
     <header>
-        <!-- <img class = 'logo' src = "https://cdn.pixabay.com/photo/2017/05/23/22/33/birthday-2338813_1280.jpg"/>
-       <img class = "logo" src = "https://cdn.pixabay.com/photo/2017/09/14/14/33/cupcake-2749204__480.jpg"/> -->
-        <!-- <img class = "logo"  src = "https://cdn.pixabay.com/photo/2018/11/22/05/09/cupcake-3831122_1280.jpg"/> -->
         <main>
             <section>
-
                 <nav>
                     <div class="nav-wrapper">
                         <div>
-                            <a href="/recipes" class="brand-logo">
-                                <img src="/logo.png" />Piece of Cake</a>
+                            <a href="/recipes" class="brand-logo center">
+                                <img src="/logo2.png" />Piece of Cake</a>
                         </div>
-                    
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="/recipes">Gallery</a></li>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
                             <li><a href="/recipes/new">Add a Recipe</a></li>
-                            <li><a href="/login">Logout</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <li class="active"><a href="/recipes">Gallery</a></li>
                         </ul>
                     </div>
                 </nav>
 
                 <body>
-
-                    <!-- Page Content goes here -->
-                    <!-- <img src = "https://cdn.pixabay.com/photo/2017/05/24/17/59/cream-2341149_1280.jpg"/>   -->
-                    <!-- <img src = "https://cdn.pixabay.com/photo/2017/12/05/16/43/egg-nog-2999740_1280.jpg"/> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="row">
-                        <div class="col s12"> </div>
-                        <div class="col s12"><img class="index_img"
-                                src="https://cdn.pixabay.com/photo/2021/04/12/10/42/tiramisu-6172170_1280.png" />
+                        <div class="col s12 header-quote"></div>
+                        <div class="col s12">
+                            <div class="container background_img">
+                                <img class="index_img"
+                                    src="https://cdn.pixabay.com/photo/2021/04/12/10/42/tiramisu-6172170_1280.png" />
+                                <div class="top-left">Bake the World a Better Place</div>
+                            </div>
                         </div>
-
                     </div>
-
-
-
             </section>
         </main>
     </header>
@@ -97,5 +61,4 @@
         </div>
     </main>
 </body>
-
 </html>
