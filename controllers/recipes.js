@@ -127,14 +127,14 @@ recipesRouter.put("/:id", isAuthenticated, (req, res) => {
 
 /////////////////////////////// Create/////////////////////////////////////////////////////////////////////
 recipesRouter.post('/', isAuthenticated, (req, res) => {
-    console.log(req.body)
     if (req.body.completed === "on") {
         req.body.completed = true;
     } else {
         req.body.completed = false;
     }
-    // This Article is now expecting an author property
+
     Recipe.create(req.body, (err, createdRecipe) => {
+        console.log("new recipe",res.body);
         res.redirect('/recipes');
     });
 });

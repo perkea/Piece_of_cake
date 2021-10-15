@@ -21,11 +21,12 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper"> 
-            <div class = "login_logo">
-            <a href="/recipes" class="brand-logo">
-                <img src="/logo.png" />Piece of Cake</a>
-        </div>   
+        <div class="nav-wrapper">
+            <div>
+                <a href="/recipes" class="brand-logo center">
+                    <img src="/logo2.png" />Piece of Cake</a>
+    
+            </div>
         </div>
       </nav>
     <h1 class = "greeting">Welcome Back</h1>
@@ -37,26 +38,25 @@
         </div>
         <!-- registration container -->
         <div class="login_registration">
-            <h2>Login in</h2>
             <% if(error){%>
             <p style="color: red;"><%= error %></p>
 
             <%}%>
-        <p>Please enter your credentials</p>
+     
         <form action="login" method="POST" autocomplete="off">
             <fieldset class="account-info">
-            <label>
-                Username:
-                <input type="text" name="username" required>
-            </label><br>
-            <label>
-                Password:
-                <input type="password" name="password" required>
-            </label><br>
-           
-            </fieldset class = "account-info">
-            <input class = "login_button waves-effect waves-light btn" type="submit" value="Login"><br>
-            <a href="/signup" class="waves-effect waves-light btn" class="signup_button">Create  account</a>
+                <legend> <h1>Login</h1>
+                    <p>It's quick and easy</p></legend>
+                 <!-- username -->
+                  <label class = "user_label">USERNAME:</label>
+                  <input class = "user_input" type="text" name = "username" required/>
+                  <!-- password -->
+                  <label class = "password_label">PASSWORD:</label>
+                  <input class = "password-input" type="password" name = "password" required>
+                  
+              </fieldset>
+            <input class="waves-effect waves-light btn" type="submit" value="Login"/>
+            <input class="waves-effect waves-light btn" type="button" onclick="window.location='/signup'" value="Create account"/>
 
         </form>
     </div>

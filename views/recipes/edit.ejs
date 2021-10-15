@@ -8,11 +8,24 @@
 
 
 <body>
+    <nav>
+        <div class="nav-wrapper">
+            <div>
+                <a href="/recipes" class="brand-logo center">
+                    <img src="/logo2.png" />Piece of Cake</a>
+            </div>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/recipes/new">Add a Recipe</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <li class="active"><a href="collapsible.html">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <h1>
         <Edit a Recipe>
     </h1>
     <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-        <!--  NOTE: the form is pre-populated with values for the server-->
         <div class="row show_container">
             <div class="col s12 show_colume">
                 Title:<input value="<%= recipe.title %>" type="text" name="title" />
@@ -27,12 +40,10 @@
                     <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
                     <li class="list"><%= recipe.ingredients[i] %></li>
                     <% } %>
-
                 </ul>
             </div>
             <div class="col s6">
-
-                Image: <input value="<%= recipe.image %>" type="text" name="image" />
+     Image: <input value="<%= recipe.image %>" type="text" name="image" />
             </div>
             <div class="col s12">
                 <h5>Directions</h5>
@@ -40,46 +51,16 @@
                     <% for(let i = 0; i < recipe.directions.length; i++){ %>
                     <li class="list"><%= recipe.directions[i] %></li>
                     <% } %>
-
                 </ol>
-
-            </div>
+                </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-        <div class = "edit_changes">
-             <input type="submit" value="Submit Changes" />
-            <a href="/recipes/<%= recipe._id; %>" class="waves-effect waves-light btn" >Make Changes</a>
-            <a href="/recipes" class="waves-effect waves-light btn" >Back to Main Gallery</a>
-         
-          </div>
-
+        <div class="changes">
+            <input type="submit" value="Submit Changes" class="waves-effect waves-light btn" /></a>
+        </div>
         
-        <input type="submit" value="Submit Changes" />
-        <i class="material-icons right"></i>
-        <a href="/recipes">Back to Main Gallery</a>
     </form>
-    
+
 </body>
 
 </html>
-
-<!-- <main>
-    <div class="container">
-      <h1 class="app-title">todos</h1>
-      <ul class="ingredient-list js-ingredient-list"></ul>
-  
-      <form class="js-form">
-        <input autofocus type="text" aria-label="Enter a new ingredient" placeholder="E.g. Build a web app" class="js-todo-input">
-      </form>
-    </div>
-  </main> -->

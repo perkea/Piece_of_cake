@@ -10,21 +10,19 @@
 
 <body>
     <header>
-      <nav>
-        <div class="nav-wrapper">
-            <div>
-                <a href="/recipes" class="brand-logo">
-                    <img src="/logo.png" />Piece of Cake</a>
-            </div>
-        
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/recipes">Gallery</a></li>
+        <nav>
+            <div class="nav-wrapper">
+              <div>
+                <a href="/recipes" class="brand-logo center">
+                  <img src="/logo2.png">Piece of Cake</a>
+              </div>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/recipes/new">Add a Recipe</a></li>
-                <li><a href="/signup">Signup</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </div>
-    </nav>
+               <li class="active"><a href="/recipes">Gallery</a></li>
+               <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </nav>
     </header>
   
     <main class = "recipe_main">
@@ -44,8 +42,9 @@
                     <ul class = "list_parent">
                           <li class = "list"></li>
                     </ul>
-                    <input class = "input-ingredient" type = "text">
-                    <button class = "add-ingredients">Add Ingredients</button>
+                    <input class = "input_ingredient" type = "text">
+                    <input class = "add_ingredients waves-effect waves-light btn" type="button" value="Add Ingredients" />
+                  
                 </div>
                 <div class="col s6">
     
@@ -53,7 +52,11 @@
                 </div>
                 <div class="col s12">
                     <h5>Directions</h5>
-                    
+                    <ul class = "list_parent_direction">
+                        <li class = "list_direction"></li>
+                  </ul>
+                  <input class = "input_directions" type = "text">
+                  <input class = "add_directions waves-effect waves-light btn" type="button" value="Add Directions" />
     
                 </div>
             </div>
@@ -75,40 +78,15 @@
              
               </div> -->
     
-            
-            <input type="submit" value="Submit Changes" />
+        
             <i class="material-icons right"></i>
-            <a href="/recipes">Back to Main Gallery</a>
+            <input class="waves-effect waves-light btn" type="submit" value="Create Recipes" />
+            <input class="waves-effect waves-light btn" type="button" onclick="window.location='/recipes'" value="Back to Main Gallery"/>
+
+            <!-- <a href="/recipes">Back to Main Gallery</a> -->
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         <form action="/recipes" method="POST" class = "new_recipe">
-            <input placeholder = "Title" type="text" name="title" /><br>
-            <input placeholder = "Intro" type="text" name="intro" /><br>
-            <input placeholder = "preparation_time" type="number" name="preparation_time" /><br>
-            <input placeholder = "cook_time" type="number" name="cook_time" /><br>
-            <input placeholder = "image" type="text" name="image" /><br>
-            <input class = "ingredients" placeholder = "ingredients" type="text" name="ingredients" /><br>
-            <input placeholder = "ingredients" type="text" name="ingredients" /><br>
-            <input placeholder = "directions" type="text" name="directions" /><br>
-            <input placeholder = "directions" type="text" name="directions" /><br>
-            <input class= "create_recipe" type="submit" value="Create Recipe" />
-        </form>
+   
+       
     </main>
 </body>
 

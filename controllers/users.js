@@ -96,7 +96,7 @@ router.post('/signup', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/signup');
+        res.redirect('/login');
     });
 });
 

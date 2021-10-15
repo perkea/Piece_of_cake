@@ -1,25 +1,25 @@
-// window.onload = function createList(){
-//     var list = document.getElementsByClassName("list");
-//     //var li = document.createElement("li");
-//     var input = document.getElementsByClassName("ingredients").value;
-//     var strComma = input.split(",");
-//     console.log(strComma);
-//     var i = 0;
-//     for (i; i < strComma.length; i++){
-//         var el = document.createTextNode(strComma[i]);
-//         var li = document.createElement("li");
-//         li.appendChild(el);
-//         list.appendChild(li);
-//     }
-// }
-
-
+//////////////////////////////////////////function to add ingredients/////////////////////////////////////////////////////////////////////////////
 function addIngredients() {
-    let inputVal = $("input-ingredient").val();
-    const ingredient = $(".list-parent").append(`<li class = "list">
-{inputVal}</li>`);
-inputVal = $("input-ingredient").val("");
+    let inputVal = $(".input_ingredient").val();
+    console.log(".input_ingredient");
+    console.log("the ingredient", inputVal);
+    const ingredient = $(".list_parent").append(` <li class = "list"><input type = "text" name = "ingredients" value = "${inputVal}"/></li>`);
+    // console.log("the ingredient in a list", ingredient);
+    inputVal = $(".input_ingredient").val("");
+}
+
+$(".add_ingredients").on("click", addIngredients);
+
+
+////////////////////////////////////////////function to add Directions/////////////////////////////////////////////////////////////////////////
+function addDirections() {
+    let inputVal = $(".input_directions").val();
+    console.log(".input_directions");
+    console.log("the ingredient", inputVal);
+    const ingredient = $(".list_parent_direction").append(` <li class = "list"><input type = "text" name = "directions" value = "${inputVal}"/></li>`);
+    inputVal = $(".input_directions").val("");
 }
 
 
-$(".addIngredients").on("click", addIngredients);
+
+$(".add_directions").on("click", addDirections);

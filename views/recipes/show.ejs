@@ -3,34 +3,24 @@
 
 <head>
   <%- include('../partials/head.ejs') %>
-  <script src = "/public/script.js"></script>
 </head>
 
-
 <body>
-  <header>
-
-  </header>
-
   <main>
     <nav>
       <div class="nav-wrapper">
         <div>
-          <a href="/recipes" class="brand-logo">
-            <img src="/logo.png" />Piece of Cake</a>
+          <a href="/recipes" class="brand-logo center">
+            <img src="/logo2.png">Piece of Cake</a>
         </div>
-
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/recipes">Gallery</a></li>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/recipes/new">Add a Recipe</a></li>
+          <li><a href="/logout">Logout</a></li>
+          <li class="active"><a href="/recipes">Gallery</a></li>
         </ul>
       </div>
     </nav>
     <section>
-
-
-     
-
       <div class="row show_container">
         <div class="col s12 show_colume">
           <h2><%= recipe.title %></h2>
@@ -43,11 +33,10 @@
         <div class="col s6">
           <h5>Ingredients</h5>
           <ul>
-          <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
-            <li class = "list"><%= recipe.ingredients[i] %></li>
-          <% } %>
-          
-        </ul>
+            <% for(let i = 0; i < recipe.ingredients.length; i++){ %>
+            <li class="list"><%= recipe.ingredients[i] %></li>
+            <% } %>
+          </ul>
         </div>
         <div class="col s6">
           <h5><img class="recipe_show_img" src="<%= recipe.image %>" />
@@ -57,29 +46,20 @@
           <h5>Directions</h5>
           <ol>
             <% for(let i = 0; i < recipe.directions.length; i++){ %>
-              <li class = "list"><%= recipe.directions[i] %></li>
+            <li class="list"><%= recipe.directions[i] %></li>
             <% } %>
-            
-            </ol>
-
+          </ol>
         </div>
       </div>
-
-      <!-- <form action="/recipes/ <%= recipe._id; %>?_method=PUT" method="POST">
-      </form> -->
-
-
-        
       <form action="/recipes/<%= recipe._id; %>?_method=DELETE" method="POST">
-        <div class = "edit_delete_link">
-          <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn" class="editLink show_edit">Edit</a>
-        <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn show_delete" type="submit"
-          value="DELETE" />
+        <div class="edit_delete_link">
+          <a href="/recipes/<%= recipe._id; %>/edit" class="waves-effect waves-light btn"
+            class="editLink show_edit">Edit</a>
+          <input class="waves-effect waves-light btn" class="waves-effect waves-light dltBtn show_delete" type="submit"
+            value="DELETE" />
         </div>
-        
       </form>
     </section>
   </main>
 </body>
-
 </html>
